@@ -8,4 +8,7 @@ import { Input } from '@angular/core';
 })
 export class HomeComponent {
   @Input() reciever:string = '';
+  message:string = 'hello world';
+  messageInterpolation = "interpolation";
+  myBoolean:boolean = true;
 }
