@@ -11,4 +11,8 @@ export class HomeComponent {
   message:string = 'hello world';
   messageInterpolation = "interpolation";
   myBoolean:boolean = true;
+
+  handleClick(name:string){
+    console.log(`hello ${name}`);
+  }
 }
