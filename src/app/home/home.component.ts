@@ -15,4 +15,9 @@ export class HomeComponent {
   handleClick(name:string){
     console.log(`hello ${name}`);
   }
+
+  person = {
+    name: '',
+    lastname: ''
+  }
 }

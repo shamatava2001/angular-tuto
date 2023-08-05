@@ -2,10 +2,16 @@
 <ng-content></ng-content>
 
 
-<!-- property binding -->
-<input value="{{messageInterpolation}}" />
-<input [value]="message" />
-<input [required]="myBoolean"/> <br/>
+<!-- two way binding -->
+<div>
+    <label>enter your name</label>
+    <input [(ngModel)]="person.name"/>
+</div>
 
-<!-- event binding -->
-<button (click)="handleClick('luffy')">Click me</button>
+<div>
+    <label>enter your lastname</label>
+    <input [(ngModel)]="person.lastname"/>
+</div>
+
+<p>name: <b>{{person.name}}</b></p>
+<p>name: <b>{{person.lastname}}</b></p>
