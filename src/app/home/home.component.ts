@@ -7,7 +7,6 @@ import { Input } from '@angular/core';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent {
-  @Input() reciever:string = '';
   message:string = 'hello world';
   messageInterpolation = "interpolation";
   myBoolean:boolean = true;
@@ -20,4 +19,5 @@ export class HomeComponent {
     name: '',
     lastname: ''
   }
+  @Input() ninja:any;
 }
