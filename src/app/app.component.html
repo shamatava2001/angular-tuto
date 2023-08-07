@@ -9,6 +9,6 @@
 </header>
 
 <section id="main">
-  <!-- custom property binding -->
-  <app-home [ninja]="ninja"></app-home>
+  <!-- custom property/event binding -->
+  <app-home [ninja]="ninja" (onSent)="getTitle($event)"></app-home>
 </section>

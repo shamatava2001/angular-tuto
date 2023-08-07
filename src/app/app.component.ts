@@ -11,4 +11,9 @@ export class AppComponent {
     name: 'yoshi',
     belt: 'black'
   }
+
+  getTitle(title:any){
+    this.title = title;
+  }
+
 }

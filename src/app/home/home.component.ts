@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 import { Input } from '@angular/core';
 
 @Component({
@@ -20,4 +20,9 @@ export class HomeComponent {
     lastname: ''
   }
   @Input() ninja:any;
+  @Output() onSent:EventEmitter<string> = new EventEmitter();
+
+  sendTitle(){
+    this.onSent.emit('Output Decorator');
+  }
 }
