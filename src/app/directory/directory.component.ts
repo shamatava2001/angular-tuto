@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-directory',
@@ -8,10 +7,27 @@ import { ActivatedRoute } from '@angular/router';
 })
 
 export class DirectoryComponent {
-  ninja:string ='';
+  show: boolean = true;
+  classes = {
 
-  constructor(private route: ActivatedRoute){
-    this.ninja = route.snapshot.params['ninja']; //grab ninja parameter value
-    // console.log(route.snapshot.params);
   }
+
+  showPar(){
+    this.show = !this.show;
+  }
+
+  changeClass(color: string){
+    if(color === 'blue'){
+      this.classes = {
+        'blue': true,
+        'yellow': false
+      }
+    } else {
+      this.classes = {
+        'blue': false,
+        'yellow': true
+      }
+    }
+  }
+
 }

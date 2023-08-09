@@ -1,2 +1,16 @@
-<p>directory works!</p>
-<p>enter param in url: {{ninja}}</p>
+<!-- change class atrr value -->
+<p [ngClass]="classes">directory works!</p>
+<button (click)="changeClass('blue')">blue</button>
+<button (click)="changeClass('yellow')">yellow</button>
+
+<p *ngIf="show"> shows this tag if true </p>
+<button (click)="showPar()">show/hide</button>
+
+<style>
+    .blue{
+        color: blue;
+    }
+    .yellow{
+        color: yellow;
+    }
+</style>
