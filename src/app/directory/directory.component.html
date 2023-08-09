@@ -1,16 +1,8 @@
-<!-- change class atrr value -->
-<p [ngClass]="classes">directory works!</p>
-<button (click)="changeClass('blue')">blue</button>
-<button (click)="changeClass('yellow')">yellow</button>
+<h2>Ninja Listing</h2>
 
-<p *ngIf="show"> shows this tag if true </p>
-<button (click)="showPar()">show/hide</button>
-
-<style>
-    .blue{
-        color: blue;
-    }
-    .yellow{
-        color: yellow;
-    }
-</style>
+<ul>
+    <li *ngFor="let ninja of ninjas">
+       name is {{ninja.name}} ,
+       belt color is: <span [ngStyle]="{color: ninja.belt}">{{ninja.belt}}</span> 
+    </li>
+</ul>

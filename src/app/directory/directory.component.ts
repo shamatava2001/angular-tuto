@@ -7,27 +7,10 @@ import { Component } from '@angular/core';
 })
 
 export class DirectoryComponent {
-  show: boolean = true;
-  classes = {
-
-  }
-
-  showPar(){
-    this.show = !this.show;
-  }
-
-  changeClass(color: string){
-    if(color === 'blue'){
-      this.classes = {
-        'blue': true,
-        'yellow': false
-      }
-    } else {
-      this.classes = {
-        'blue': false,
-        'yellow': true
-      }
-    }
-  }
+  ninjas = [
+    {name:'minato', belt:'green'},
+    {name:'kakashi', belt:'red'},
+    {name:'obito', belt:'yellow'}
+  ]
 
 }
