@@ -2,7 +2,7 @@
 
 <ul>
     <li *ngFor="let ninja of ninjas">
-       name is {{ninja.name}} ,
+       name is {{ninja.name | uppercase | slice:1}} ,
        belt color is: <span [ngStyle]="{color: ninja.belt}">{{ninja.belt}}</span> 
     </li>
 </ul>
