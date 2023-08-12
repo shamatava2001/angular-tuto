@@ -1,4 +1,4 @@
-import { Component, OnInit} from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { LoggingService } from '../logging.service';
 import { DataService } from '../data.service';
 import { INinjas } from '../ninjas';
@@ -8,24 +8,22 @@ import { INinjas } from '../ninjas';
   templateUrl: './directory.component.html',
   styleUrls: ['./directory.component.css'],
 })
-
-export class DirectoryComponent implements OnInit{
+export class DirectoryComponent implements OnInit {
   ninjas: any;
 
-  term:any;
-  constructor(private logger: LoggingService, private dataService : DataService){
+  term: any;
+  constructor(
+    private logger: LoggingService,
+    private dataService: DataService,
+  ) {
     console.log(logger);
   }
 
-  logIt(){
+  logIt() {
     this.logger.log();
   }
 
   ngOnInit(): void {
-      this.dataService.getNinjas().subscribe(res=> this.ninjas = res);
+    this.dataService.getNinjas().subscribe((res) => (this.ninjas = res));
   }
-  
-            
-
-
 }

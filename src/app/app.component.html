@@ -9,18 +9,27 @@
 </header> -->
 
 <!-- <section id="main"> -->
-  <!-- custom property/event binding -->
-  <!-- <app-home [ninja]="ninja" (onSent)="getTitle($event)"></app-home> -->
+<!-- custom property/event binding -->
+<!-- <app-home [ninja]="ninja" (onSent)="getTitle($event)"></app-home> -->
 <!-- </section> -->
 
-
-
-<h1>{{title}}</h1>
+<h1>{{ title }}</h1>
 <!-- This nav gives you links to click, which tells the router which route to use (defined in the routes constant in  AppRoutingModule) -->
 <nav>
   <ul>
-    <li><a routerLink="/directory" routerLinkActive="active" ariaCurrentWhenActive="page">directory</a></li>
-    <li><a routerLink="/" routerLinkActive="active" ariaCurrentWhenActive="page">home</a></li>
+    <li>
+      <a
+        routerLink="/directory"
+        routerLinkActive="active"
+        ariaCurrentWhenActive="page"
+        >directory</a
+      >
+    </li>
+    <li>
+      <a routerLink="/" routerLinkActive="active" ariaCurrentWhenActive="page"
+        >home</a
+      >
+    </li>
   </ul>
 </nav>
 <!-- The routed views render in the <router-outlet>-->

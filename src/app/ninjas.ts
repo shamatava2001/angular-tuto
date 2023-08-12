@@ -1,4 +1,4 @@
-export interface INinjas{
-    name: string,
-    belt: string
+export interface INinjas {
+  name: string;
+  belt: string;
 }

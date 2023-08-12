@@ -1,18 +1,15 @@
 <h2>Ninja Listing</h2>
 
 <form>
-    <label>Filter ninjas by name:</label>
-    <input type="text" [(ngModel)]="term" name="filter">
-
+  <label>Filter ninjas by name:</label>
+  <input type="text" [(ngModel)]="term" name="filter" />
 </form>
 
-
-
 <ul>
-    <li *ngFor="let ninja of ninjas | filter:term">
-       name is {{ninja.name}} ,
-       belt color is: <span [ngStyle]="{color: ninja.belt}">{{ninja.belt}}</span> 
-    </li>
+  <li *ngFor="let ninja of ninjas | filter: term">
+    name is {{ ninja.name }} , belt color is:
+    <span [ngStyle]="{ color: ninja.belt }">{{ ninja.belt }}</span>
+  </li>
 </ul>
 
 <button (click)="logIt()">log it</button>
