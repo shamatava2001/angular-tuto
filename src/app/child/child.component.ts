@@ -6,14 +6,15 @@ import { Component,
   ViewChild, 
   ElementRef, 
   ContentChild, 
-  DoCheck} from '@angular/core';
+  DoCheck,
+  AfterContentInit} from '@angular/core';
 
 @Component({
   selector: 'app-child',
   templateUrl: './child.component.html',
   styleUrls: ['./child.component.css']
 })
-export class ChildComponent implements OnChanges, OnInit, DoCheck {
+export class ChildComponent implements OnChanges, OnInit, DoCheck, AfterContentInit {
 
   @Input() textPar : string = 's';
   @Input() textPar2 : string = 's';
@@ -42,6 +43,12 @@ export class ChildComponent implements OnChanges, OnInit, DoCheck {
   // მუშაობის დასრულების შემდეგ, ხდება projection
   ngDoCheck(): void {
     console.log(`ngDoCheck called. in ngDoCheck @contentChild: ${this.headingEl}`);
+  }
+
+  // 4.ngAfterContentInit - გამოიძახება მხოლოდ პირველი change detection cycle-ის დროს
+  // როცა, projected content ინიციალიზებულია, (არსებობის შემთხვევაში)
+  ngAfterContentInit(): void {
+    console.log(`ngAfterContentInit called. in ngAfterContentInit @contentChild: ${this.headingEl?.nativeElement}`);
   }
 
 }
