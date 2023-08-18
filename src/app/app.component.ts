@@ -9,9 +9,14 @@ export class AppComponent{
   title = 'net-ninja';
   text = 'input1';
   text2 = 'input2'
+  projectedText = 'projection';
 
   handleClick(){
     this.text = 'clicked';
   }
+  changeText(){
+    this.projectedText = 'new projection';
+  }
+
 
 }
