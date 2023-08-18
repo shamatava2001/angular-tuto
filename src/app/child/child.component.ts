@@ -10,7 +10,8 @@ import { Component,
   AfterContentInit,
   AfterContentChecked,
   AfterViewInit,
-  AfterViewChecked} from '@angular/core';
+  AfterViewChecked,
+  OnDestroy} from '@angular/core';
 
 @Component({
   selector: 'app-child',
@@ -19,7 +20,7 @@ import { Component,
 })
 export class ChildComponent implements OnChanges, OnInit, DoCheck, 
 AfterContentInit, AfterContentChecked, 
-AfterViewInit, AfterViewChecked {
+AfterViewInit, AfterViewChecked, OnDestroy {
 
   @Input() textPar : string = 's';
   @Input() textPar2 : string = 's';
@@ -78,6 +79,10 @@ AfterViewInit, AfterViewChecked {
   // როცა, კომპონენტის view იცვლება, აქ უკვე გაახლებულია @viewChild property-ახალი refernece-ით
   ngAfterViewChecked(): void {
     console.log(`ngAfterViewChecked called, here @viewChild: ${this.paraEl?.nativeElement.innerText}`);
+  }
+  // 8.ngOnDestroy - გამოიძახება სანამ კომპონენტი განადგურდება
+  ngOnDestroy(): void {
+    console.log(`ngOnDestroy called!`);
   }
 
 }

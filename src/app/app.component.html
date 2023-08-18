@@ -1,5 +1,6 @@
-<app-child [textPar]="text" [textPar2]="text2">
+<app-child *ngIf="show" [textPar]="text" [textPar2]="text2">
     <h1 #heading>{{projectedText}}</h1>
 </app-child>
 <button (click)="handleClick()">click me</button>
 <button (click)="changeText()">Change projectedText</button>
+<button (click)="showChild()">show/hide</button>

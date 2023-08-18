@@ -10,12 +10,16 @@ export class AppComponent{
   text = 'input1';
   text2 = 'input2'
   projectedText = 'projection';
+  show : boolean = true;
 
   handleClick(){
     this.text = 'clicked';
   }
   changeText(){
     this.projectedText = 'new projection';
+  }
+  showChild(){
+    this.show = !this.show;
   }
 
 
