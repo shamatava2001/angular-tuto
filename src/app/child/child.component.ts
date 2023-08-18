@@ -8,14 +8,16 @@ import { Component,
   ContentChild, 
   DoCheck,
   AfterContentInit,
-  AfterContentChecked} from '@angular/core';
+  AfterContentChecked,
+  AfterViewInit} from '@angular/core';
 
 @Component({
   selector: 'app-child',
   templateUrl: './child.component.html',
   styleUrls: ['./child.component.css']
 })
-export class ChildComponent implements OnChanges, OnInit, DoCheck, AfterContentInit, AfterContentChecked {
+export class ChildComponent implements OnChanges, OnInit, DoCheck, 
+AfterContentInit, AfterContentChecked, AfterViewInit {
 
   @Input() textPar : string = 's';
   @Input() textPar2 : string = 's';
@@ -56,6 +58,13 @@ export class ChildComponent implements OnChanges, OnInit, DoCheck, AfterContentI
   //როცა, projected content იცვლება, აქ უკვე გაახლებულია ContentChild property-ახალი refernece-ით
   ngAfterContentChecked(): void {
     console.log(`ngAfterContentChecked called. in ngAfterContentChecked @ContentChild: ${this.headingEl?.nativeElement.innerText}`);
+  }
+
+  // 6.ngAfterViewInit - გამოიძახება მხოლოდ პირველი change detection cycle-ის დროს
+  // როცა, კომპონენტის view ინიციალიზებული იქნება და განახლებულია @viewChild prop
+  // ე.ი @viewChild prop პირველად აქ არის ხელმისაწვდომი
+  ngAfterViewInit(): void {
+    console.log(`ngAfterViewInit called. here @viewChild: ${this.paraEl?.nativeElement.innerText}`);
   }
 
 }
