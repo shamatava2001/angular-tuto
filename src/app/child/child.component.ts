@@ -9,7 +9,8 @@ import { Component,
   DoCheck,
   AfterContentInit,
   AfterContentChecked,
-  AfterViewInit} from '@angular/core';
+  AfterViewInit,
+  AfterViewChecked} from '@angular/core';
 
 @Component({
   selector: 'app-child',
@@ -17,15 +18,21 @@ import { Component,
   styleUrls: ['./child.component.css']
 })
 export class ChildComponent implements OnChanges, OnInit, DoCheck, 
-AfterContentInit, AfterContentChecked, AfterViewInit {
+AfterContentInit, AfterContentChecked, 
+AfterViewInit, AfterViewChecked {
 
   @Input() textPar : string = 's';
   @Input() textPar2 : string = 's';
   @ViewChild('par') paraEl : ElementRef | undefined;
   @ContentChild('heading') headingEl : ElementRef | undefined;
+  parText : string = 'child works!'
 
   constructor(){
     console.log('constructor called,', this.textPar);
+  }
+
+  changeParText(){
+    this.parText = 'new text';
   }
 
   // 1. ngOnChanges - როცა input property  ინიციალიზებულია ან იცვლება 
@@ -65,6 +72,12 @@ AfterContentInit, AfterContentChecked, AfterViewInit {
   // ე.ი @viewChild prop პირველად აქ არის ხელმისაწვდომი
   ngAfterViewInit(): void {
     console.log(`ngAfterViewInit called. here @viewChild: ${this.paraEl?.nativeElement.innerText}`);
+  }
+
+  // 7.ngAfterViewChecked - გამოიძახება ყოველი change detection cycle-ის დროს
+  // როცა, კომპონენტის view იცვლება, აქ უკვე გაახლებულია @viewChild property-ახალი refernece-ით
+  ngAfterViewChecked(): void {
+    console.log(`ngAfterViewChecked called, here @viewChild: ${this.paraEl?.nativeElement.innerText}`);
   }
 
 }
