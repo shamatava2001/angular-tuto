@@ -1,11 +1,19 @@
-import { Component, OnChanges, Input, SimpleChanges, OnInit, ViewChild, ElementRef, ContentChild } from '@angular/core';
+import { Component, 
+  OnChanges, 
+  Input, 
+  SimpleChanges, 
+  OnInit, 
+  ViewChild, 
+  ElementRef, 
+  ContentChild, 
+  DoCheck} from '@angular/core';
 
 @Component({
   selector: 'app-child',
   templateUrl: './child.component.html',
   styleUrls: ['./child.component.css']
 })
-export class ChildComponent implements OnChanges, OnInit {
+export class ChildComponent implements OnChanges, OnInit, DoCheck {
 
   @Input() textPar : string = 's';
   @Input() textPar2 : string = 's';
@@ -28,4 +36,12 @@ export class ChildComponent implements OnChanges, OnInit {
     console.log('ngOnInit called.', `initial input values: ${this.textPar}, ${this.textPar2}`);
     console.log(`in ngOnInit. @viewChild: ${this.paraEl}, @contentChild: ${this.headingEl}`);
   }
+
+  // 3.ngDoCheck - გამოიძახება ყოველი change detection cycle-ის დროს
+  // ე.ი ნებისმიერი event-ის დროს
+  // მუშაობის დასრულების შემდეგ, ხდება projection
+  ngDoCheck(): void {
+    console.log(`ngDoCheck called. in ngDoCheck @contentChild: ${this.headingEl}`);
+  }
+
 }
