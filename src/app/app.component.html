@@ -1,4 +1,7 @@
-
+<ul>
+    <li><a routerLink="test">test</a></li>
+    <li><a routerLink="directory">directory</a></li>
+</ul>
 <div *ngIf="show">
     <div>
         <!-- regular prop=value -->
@@ -21,3 +24,6 @@
 <!-- output retreived data from child -->
 <br>
 <b>child data: {{childData}}</b>
+
+<h1>loaded component</h1>
+<router-outlet></router-outlet>
