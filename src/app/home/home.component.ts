@@ -1,4 +1,4 @@
-import { Component, Input} from '@angular/core';
+import { Component, EventEmitter, Input, Output} from '@angular/core';
 
 
 @Component({
@@ -8,5 +8,11 @@ import { Component, Input} from '@angular/core';
 })
 export class HomeComponent {
   @Input() text: string | undefined;
+  @Output() customEvent = new EventEmitter();
+
+  // emitting custom event with some data
+  handleClick(){
+    this.customEvent.emit(2023);
+  }
 
 }

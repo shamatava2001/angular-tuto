@@ -16,4 +16,8 @@
 <button (click)="handleClick($event)">show/hide</button>
 
 <!-- passing data to child -->
-<app-home [text]="'text from parent'"></app-home>
+<app-home [text]="'text from parent'" (customEvent)="handleCustomEvent($event)"></app-home>
+
+<!-- output retreived data from child -->
+<br>
+<b>child data: {{childData}}</b>
