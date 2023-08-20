@@ -1,0 +1,16 @@
+
+<div *ngIf="show">
+    <div>
+        <!-- regular prop=value -->
+        <label for="name">regular</label>
+        <input type="text" value="name">
+    </div>
+    <div>
+            <!-- property binding -->
+        <label for="name">binding</label>
+        <input type="text" [value]="name">
+    </div>
+</div>
+
+<!-- event binding -->
+<button (click)="handleClick($event)">show/hide</button>
