@@ -14,3 +14,6 @@
 
 <!-- event binding -->
 <button (click)="handleClick($event)">show/hide</button>
+
+<!-- passing data to child -->
+<app-home [text]="'text from parent'"></app-home>
