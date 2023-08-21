@@ -6,13 +6,15 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { DirectoryComponent } from './directory/directory.component';
 import { TestComponent } from './test/test.component';
+import { IncrementPipe } from './increment.pipe';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     DirectoryComponent,
-    TestComponent
+    TestComponent,
+    IncrementPipe
   ],
   imports: [
     BrowserModule,

@@ -1,6 +1,7 @@
 <p>directory works!</p>
 <ul>
     <li *ngFor="let movie of movies">
-        <b>name:</b>{{movie.name}} <b>imdb:</b>{{movie.imdb}}
+        <b>name:</b>{{movie.name | uppercase}}
+        <b>imdb:</b>{{movie.imdb | increment: 0.2}}
     </li>
 </ul>
