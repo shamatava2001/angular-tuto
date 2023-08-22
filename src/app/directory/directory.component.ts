@@ -10,7 +10,10 @@ export class DirectoryComponent {
   movies: {name: string, imdb: number}[];
 
   constructor(data: DataService){
-    this.movies = data.movies;
+    this.movies = [];
+    // this.movies = data.movies;
+    // console.log(data.getMovies());
+    data.getMovies().subscribe((val)=>{this.movies = val});
   }
 
 }

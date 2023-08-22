@@ -1,16 +1,16 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import {Observable} from 'rxjs'
 
 @Injectable({
   providedIn: 'root'
 })
 export class DataService {
 
-  movies : {name: string, imdb: number}[] = [
-    {name: 'The Silence of the Lambs', imdb: 8.6},
-    {name: 'The Wolf of Wall Street', imdb: 8.2},
-    {name: 'Batman Begins', imdb: 8.4},
-    {name: 'Inglourious Basterds', imdb: 8.3}
-  ];
+  constructor(private http: HttpClient) {   }
 
-  constructor() { }
+  getMovies(): Observable<{name:string, imdb:number}[]>{
+    return this.http.get<{name:string, imdb:number}[]>('../assets/movies.json');
+  }
+
 }
