@@ -1,1 +1,25 @@
-<button mat-raised-button>Hello World</button>
+<div>
+    <button mat-fab extended>
+        <mat-icon>home</mat-icon>
+        home
+    </button>    
+</div>
+
+<div>
+    <mat-button-toggle #toggleBtn checked>Toggle</mat-button-toggle>
+    {{toggleBtn.checked}}
+</div>
+
+<div>
+    <mat-button-toggle-group #toggleGroup="matButtonToggleGroup">
+        <mat-button-toggle value="angular">Angular</mat-button-toggle>
+        <mat-button-toggle value="react">React</mat-button-toggle>
+        <mat-button-toggle value="vue">Vue</mat-button-toggle>
+    </mat-button-toggle-group>
+    {{toggleGroup.value}}
+</div>
+
+<div>
+    <mat-icon>login</mat-icon>
+    <mat-icon>logout</mat-icon>
+</div>
