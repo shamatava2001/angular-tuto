@@ -1,1 +1,44 @@
-<p>studentform works!</p>
+<div mat-dialog-title>სტუდენტის ფორმა</div>
+<div mat-dialog-content>
+    <form>
+        <div class="row">
+            <mat-form-field appearance="outline">
+                <mat-label>სახელი</mat-label>
+                <input matInput>
+            </mat-form-field>
+            <mat-form-field appearance="outline">
+                <mat-label>გვარი</mat-label>
+                <input matInput>
+            </mat-form-field>
+        </div>
+    
+        <div class="row">
+            <mat-form-field appearance="outline">
+                <mat-label>უნივერსიტეტი</mat-label>
+                <input matInput>
+            </mat-form-field>
+            <mat-form-field appearance="outline">
+                <mat-label>ფაკულტეტი</mat-label>
+                <input matInput>
+            </mat-form-field>
+        </div>
+    
+        <div class="row">
+            <mat-form-field appearance="outline">
+                <mat-label>სპეციალობა</mat-label>
+                <input matInput>
+            </mat-form-field>
+            <mat-form-field appearance="outline">
+                <mat-label>ჩარიცხვის თარიღი</mat-label>
+                <input matInput [matDatepicker]="picker">
+                <mat-hint>თვე/დღე/წელი</mat-hint>
+                <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+                <mat-datepicker #picker></mat-datepicker>      
+            </mat-form-field>
+        </div>
+    </form>
+</div>
+<div mat-dialog-actions>
+    <button mat-raised-button>გაუქმება</button>
+    <button mat-raised-button color="primary">შენახვა</button>
+</div>

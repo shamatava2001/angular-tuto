@@ -1,0 +1,16 @@
+.row {
+    display: flex;
+    gap: 3px;
+}
+.row mat-form-field {
+    flex: 1 1 0;
+}
+div[mat-dialog-content] {
+    padding-top: 10px;
+}
+div[mat-dialog-actions]{
+    padding: 0 24px;
+}
+div[mat-dialog-actions] button{
+    flex: 1 1 0;
+}
