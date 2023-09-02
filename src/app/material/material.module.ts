@@ -3,7 +3,7 @@ import {MatButtonModule} from '@angular/material/button'
 import {MatIconModule} from '@angular/material/icon';
 import {MatButtonToggleModule} from '@angular/material/button-toggle';
 import {MatDialogModule} from '@angular/material/dialog';
-
+import {MatTableModule} from '@angular/material/table'
 
 
 
@@ -11,7 +11,8 @@ const MaterialComponents = [
   MatButtonModule,
   MatIconModule,
   MatButtonToggleModule,
-  MatDialogModule
+  MatDialogModule,
+  MatTableModule
 ];
 
 
