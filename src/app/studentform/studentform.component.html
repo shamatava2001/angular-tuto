@@ -1,44 +1,48 @@
-<div mat-dialog-title>სტუდენტის ფორმა</div>
-<div mat-dialog-content>
-    <form>
-        <div class="row">
-            <mat-form-field appearance="outline">
-                <mat-label>სახელი</mat-label>
-                <input matInput>
-            </mat-form-field>
-            <mat-form-field appearance="outline">
-                <mat-label>გვარი</mat-label>
-                <input matInput>
-            </mat-form-field>
-        </div>
-    
-        <div class="row">
-            <mat-form-field appearance="outline">
-                <mat-label>უნივერსიტეტი</mat-label>
-                <input matInput>
-            </mat-form-field>
-            <mat-form-field appearance="outline">
-                <mat-label>ფაკულტეტი</mat-label>
-                <input matInput>
-            </mat-form-field>
-        </div>
-    
-        <div class="row">
-            <mat-form-field appearance="outline">
-                <mat-label>სპეციალობა</mat-label>
-                <input matInput>
-            </mat-form-field>
-            <mat-form-field appearance="outline">
-                <mat-label>ჩარიცხვის თარიღი</mat-label>
-                <input matInput [matDatepicker]="picker">
-                <mat-hint>თვე/დღე/წელი</mat-hint>
-                <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
-                <mat-datepicker #picker></mat-datepicker>      
-            </mat-form-field>
-        </div>
-    </form>
+<div mat-dialog-title>
+    <h1>სტუდენტის ფორმა</h1>
 </div>
-<div mat-dialog-actions>
-    <button mat-raised-button>გაუქმება</button>
-    <button mat-raised-button color="primary">შენახვა</button>
-</div>
+
+<form [formGroup]="studForm" (ngSubmit)="handleSubmit()">
+    <div mat-dialog-content>
+            <div class="row">
+                <mat-form-field appearance="outline">
+                    <mat-label>სახელი</mat-label>
+                    <input matInput formControlName="firstName">
+                </mat-form-field>
+                <mat-form-field appearance="outline">
+                    <mat-label>გვარი</mat-label>
+                    <input matInput formControlName="lastName">
+                </mat-form-field>
+            </div>
+        
+            <div class="row">
+                <mat-form-field appearance="outline">
+                    <mat-label>უნივერსიტეტი</mat-label>
+                    <input matInput formControlName="university">
+                </mat-form-field>
+                <mat-form-field appearance="outline">
+                    <mat-label>ფაკულტეტი</mat-label>
+                    <input matInput formControlName="faculty">
+                </mat-form-field>
+            </div>
+        
+            <div class="row">
+                <mat-form-field appearance="outline">
+                    <mat-label>სპეციალობა</mat-label>
+                    <input matInput formControlName="speciality">
+                </mat-form-field>
+                <mat-form-field appearance="outline">
+                    <mat-label>ჩარიცხვის თარიღი</mat-label>
+                    <input matInput [matDatepicker]="picker" formControlName="enrollDate">
+                    <mat-hint>თვე/დღე/წელი</mat-hint>
+                    <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+                    <mat-datepicker #picker></mat-datepicker>      
+                </mat-form-field>
+            </div>
+    </div>
+    <div mat-dialog-actions>
+            <button mat-raised-button type="button">გაუქმება</button>
+            <button mat-raised-button color="primary" type="submit">შენახვა</button>
+    </div>
+</form>
+
