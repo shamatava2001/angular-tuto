@@ -22,7 +22,7 @@ interface IStudent{
 
 export class AppComponent implements OnInit{
   displayedColumn = ['id', 'firstname', 'lastname', 
-  'university', 'faculty', 'speciality', 'enrolldate'];
+  'university', 'faculty', 'speciality', 'enrolldate', 'actions'];
   dataSource!: IStudent[];
 
   constructor(private dialog: MatDialog, private dataService: DataserviceService){}
@@ -38,6 +38,9 @@ export class AppComponent implements OnInit{
       error: (err)=> {alert('წარმოიშვა შეცდომა')}  
       }
     )
+  }
+  deleteStudent(id: number){
+    this.dataService.deleteData(id).subscribe((res)=>{alert('წარმატებით წაიშალა')})
   }
   
 }

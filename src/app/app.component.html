@@ -42,6 +42,18 @@
     <mat-cell *matCellDef="let element">{{element.enrollDate}}</mat-cell>
   </ng-container>
 
+  <ng-container matColumnDef="actions">
+    <mat-header-cell *matHeaderCellDef>მოქმედებები</mat-header-cell>
+    <mat-cell *matCellDef="let element">
+      <button mat-icon-button color="primary">
+        <mat-icon>edit</mat-icon>
+      </button>
+      <button mat-icon-button color="warn" (click)="deleteStudent(element.id)">
+        <mat-icon>delete</mat-icon>
+      </button>
+    </mat-cell>
+  </ng-container>
+
   <mat-header-row *matHeaderRowDef="displayedColumn"></mat-header-row>
   <mat-row *matRowDef="let x; columns: displayedColumn"></mat-row>
 </mat-table>
