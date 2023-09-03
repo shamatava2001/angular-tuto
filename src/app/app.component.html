@@ -5,3 +5,43 @@
 
   <button mat-raised-button color="primary" (click)="handleClick()">დამატება</button>
 </mat-toolbar>
+
+<mat-table [dataSource]="dataSource">
+  <ng-container matColumnDef="id">
+    <mat-header-cell *matHeaderCellDef>იდენტიფიკატორი</mat-header-cell>
+    <mat-cell *matCellDef="let element">{{element.id}}</mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="firstname">
+    <mat-header-cell *matHeaderCellDef>სახელი</mat-header-cell>
+    <mat-cell *matCellDef="let element">{{element.firstName}}</mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="lastname">
+    <mat-header-cell *matHeaderCellDef>გვარი</mat-header-cell>
+    <mat-cell *matCellDef="let element">{{element.lastName}}</mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="university">
+    <mat-header-cell *matHeaderCellDef>უნივერსიტეტი</mat-header-cell>
+    <mat-cell *matCellDef="let element">{{element.university}}</mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="faculty">
+    <mat-header-cell *matHeaderCellDef>ფაკულტეტი</mat-header-cell>
+    <mat-cell *matCellDef="let element">{{element.faculty}}</mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="speciality">
+    <mat-header-cell *matHeaderCellDef>სპეციალობა</mat-header-cell>
+    <mat-cell *matCellDef="let element">{{element.speciality}}</mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="enrolldate">
+    <mat-header-cell *matHeaderCellDef>ჩარიცხვის თარიღი</mat-header-cell>
+    <mat-cell *matCellDef="let element">{{element.enrollDate}}</mat-cell>
+  </ng-container>
+
+  <mat-header-row *matHeaderRowDef="displayedColumn"></mat-header-row>
+  <mat-row *matRowDef="let x; columns: displayedColumn"></mat-row>
+</mat-table>

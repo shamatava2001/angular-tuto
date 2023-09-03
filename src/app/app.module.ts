@@ -13,6 +13,7 @@ import {MatDatepickerModule} from '@angular/material/datepicker';
 import {MatNativeDateModule} from '@angular/material/core';
 import { ReactiveFormsModule } from '@angular/forms';
 import {HttpClientModule} from '@angular/common/http';
+import {MatTableModule} from '@angular/material/table';
 import { StudentformComponent } from './studentform/studentform.component';
 
 @NgModule({
@@ -33,6 +34,7 @@ import { StudentformComponent } from './studentform/studentform.component';
     MatNativeDateModule,
     ReactiveFormsModule,
     HttpClientModule,
+    MatTableModule
   ],
   providers: [],
   bootstrap: [AppComponent]

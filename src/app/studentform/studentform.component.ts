@@ -28,7 +28,7 @@ export class StudentformComponent {
 
   handleSubmit(){
     // console.log(this.studForm.value);
-    this.dataService.getData(this.studForm.value).subscribe({
+    this.dataService.addData(this.studForm.value).subscribe({
       next:(res)=>{
         alert('სტუდენტი წარმატებით დაემატა');
         this.dialogRef.close();
