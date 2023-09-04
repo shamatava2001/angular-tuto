@@ -15,4 +15,7 @@ export class DataserviceService {
   deleteData(id: number){
     return this.http.delete(`http://localhost:3000/students/${id}`);
   }
+  updateData(id:number, data:any){
+    return this.http.put(`http://localhost:3000/students/${id}`,data);
+  }
 }

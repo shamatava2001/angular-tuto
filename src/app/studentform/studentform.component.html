@@ -42,7 +42,9 @@
     </div>
     <div mat-dialog-actions>
             <button mat-raised-button type="button">გაუქმება</button>
-            <button mat-raised-button color="primary" type="submit">შენახვა</button>
+            <button mat-raised-button color="primary" type="submit">
+                {{data ? 'განახლება': 'შენახვა'}}
+            </button>
     </div>
 </form>
 

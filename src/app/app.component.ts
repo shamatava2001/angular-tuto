@@ -3,7 +3,6 @@ import { MatDialog } from '@angular/material/dialog';
 import { StudentformComponent } from './studentform/studentform.component';
 import {OnInit} from '@angular/core';
 import { DataserviceService } from './dataservice.service';
-
 interface IStudent{
   id: number,
   firstName: string,
@@ -13,6 +12,7 @@ interface IStudent{
   speciality: string,
   enrollDate: string
 }
+
 
 @Component({
   selector: 'app-root',
@@ -41,6 +41,9 @@ export class AppComponent implements OnInit{
   }
   deleteStudent(id: number){
     this.dataService.deleteData(id).subscribe((res)=>{alert('წარმატებით წაიშალა')})
+  }
+  editStudent(data: any){
+    this.dialog.open(StudentformComponent, {data: data});
   }
   
 }
