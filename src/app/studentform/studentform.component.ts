@@ -44,12 +44,18 @@ export class StudentformComponent {
     this.dataService.addData(this.studForm.value).subscribe({
       next:(res)=>{
         alert('სტუდენტი წარმატებით დაემატა');
-        this.dialogRef.close();
+        this.dialogRef.close(true);
       },
       error:(err)=>{alert('წარმოიშვა ხარვეზი')}
     }) 
   }
   updateData(id: number, data:any){
-    this.dataService.updateData(id, data).subscribe((res)=>{alert('წარმატებით შეიცვალა')});
+    this.dataService.updateData(id, data).subscribe({
+      next:(res)=>{
+        alert(' წარმატებით შეიცვალა');
+        this.dialogRef.close(true);
+      },
+      error:(err)=>{alert('წარმოიშვა ხარვეზი')}
+    });
   }
 }
