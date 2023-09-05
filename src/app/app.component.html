@@ -68,3 +68,9 @@
 <div class="badges">
   <span [matBadge]="notifications" matBadgeOverlap="true" matBadgeColor="warn">შეტყობინება</span>
 </div>
+
+<!-- progress Spiner -->
+  <!-- <mat-progress-spinner [value]="value"></mat-progress-spinner> -->
+
+<mat-spinner *ngIf="show"></mat-spinner>
+<button mat-raised-button (click)="loadData()">load data</button>

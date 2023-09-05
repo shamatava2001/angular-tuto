@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { DialogExampleComponent } from './dialog-example/dialog-example.component';
 
@@ -27,9 +27,12 @@ const ELEMENT_DATA: PeriodicElement[] = [
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent {
-  notifications: number = 5;
+export class AppComponent implements OnInit{
+  notifications: number = 1;
   title = 'net-ninja';
+  value: number = 0;
+  show: boolean = false;
+  interval: any;
   constructor(private dialog: MatDialog){ }
 
   openDialog(){
@@ -40,4 +43,21 @@ export class AppComponent {
 
   displayedColumns: string[] = ['name', 'position', 'weight', 'symbol'];
   dataSource = ELEMENT_DATA;
+
+  ngOnInit(): void {
+   setInterval(()=>{
+      if(this.value === 100){
+        this.value = 0;
+      }
+      this.value = this.value + 2;
+    },100)
+    
+  }
+
+  loadData(){
+    this.show = true;
+    setTimeout(()=>{
+      this.show = false;
+    }, 3000);
+  }
 }
