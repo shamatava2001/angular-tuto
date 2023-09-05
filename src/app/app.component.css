@@ -7,3 +7,10 @@ mat-table {
 div.badges {
   margin: 15px;
 }
+.navbar {
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+.navbar span {
+  padding-right: 10px;
+}
