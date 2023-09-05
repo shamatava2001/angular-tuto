@@ -28,6 +28,7 @@ const ELEMENT_DATA: PeriodicElement[] = [
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+  notifications: number = 5;
   title = 'net-ninja';
   constructor(private dialog: MatDialog){ }
 

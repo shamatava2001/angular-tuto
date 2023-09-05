@@ -1,4 +1,9 @@
 table {
     width: 100%;
   }
-  
+mat-table {
+  margin: 25px 0px;
+}
+div.badges {
+  margin: 15px;
+}
