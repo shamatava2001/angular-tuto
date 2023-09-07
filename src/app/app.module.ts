@@ -3,7 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { setBackgroundDirective } from './custom directives/setBackground.directive';
+import { setBackgroundDirective } from './customDirectives/setBackground.directive';
 
 @NgModule({
   declarations: [AppComponent, setBackgroundDirective],
