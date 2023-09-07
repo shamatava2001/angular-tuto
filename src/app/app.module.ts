@@ -6,15 +6,9 @@ import { AppComponent } from './app.component';
 import { setBackgroundDirective } from './custom directives/setBackground.directive';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    setBackgroundDirective
-  ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule
-  ],
+  declarations: [AppComponent, setBackgroundDirective],
+  imports: [BrowserModule, AppRoutingModule],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
