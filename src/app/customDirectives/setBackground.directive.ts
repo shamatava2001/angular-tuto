@@ -6,7 +6,15 @@ import { Renderer2 } from '@angular/core';
   selector: '[setBackground]',
 })
 export class setBackgroundDirective implements OnInit {
-  @Input('setBackground') bgColor: string | undefined = 'red';
+  @Input() set setBackground(setting: boolean) {
+    if (setting) {
+      this.renderer.setStyle(
+        this.element.nativeElement,
+        'backgroundColor',
+        'yellow'
+      );
+    }
+  }
   @Input() textColor: string = 'white';
 
   constructor(
@@ -19,13 +27,9 @@ export class setBackgroundDirective implements OnInit {
     this.renderer.setStyle(
       this.element.nativeElement,
       'backgroundColor',
-      this.bgColor
+      this.setBackground
     );
 
-    this.renderer.setStyle(
-      this.element.nativeElement,
-      'color',
-      this.textColor
-    );
+    this.renderer.setStyle(this.element.nativeElement, 'color', this.textColor);
   }
 }

@@ -24,5 +24,4 @@ export class AppHoverDirective {
   @HostListener('mouseout') onMouseOut() {
     this.text = 'Hover Me';
   }
-  
 }
