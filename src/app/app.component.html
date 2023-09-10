@@ -22,17 +22,26 @@
 
 <div><button (click)="extendInfo()">extend</button></div>
 <!-- <ng-template [ngIf]="active" [ngIfElse]="parelse"> -->
-  <div style="border: 1px solid blue;" *ngIf="active else parelse">
+  <!-- <div style="border: 1px solid blue;" *ngIf="active else parelse">
+    <h2>This is Extended information</h2>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
+       Neque asperiores ducimus alias, 
+      nostrum officiis, voluptates unde recusandae a vero, commodi aut amet hic?
+    </p>
+  </div> -->
+<!-- </ng-template> -->
+
+<!-- <ng-template #parelse>
+  <div>
+    <p>render this paragraph in else case</p>
+  </div>
+</ng-template> -->
+
+<!-- custom structural directive -->
+  <div *appIf="active">
     <h2>This is Extended information</h2>
     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
        Neque asperiores ducimus alias, 
       nostrum officiis, voluptates unde recusandae a vero, commodi aut amet hic?
     </p>
   </div>
-<!-- </ng-template> -->
-
-<ng-template #parelse>
-  <div>
-    <p>render this paragraph in else case</p>
-  </div>
-</ng-template>

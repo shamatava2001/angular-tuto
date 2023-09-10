@@ -8,6 +8,7 @@ import { HighlightDirective } from './customDirectives/highlight.directive';
 import { AppHoverDirective } from './customDirectives/appHover.directive';
 import { ClassDirective } from './customDirectives/class.directive';
 import { StyleDirective } from './customDirectives/style.directive';
+import { IfDirective } from './customDirectives/if.directive';
 
 @NgModule({
   declarations: [
@@ -17,6 +18,7 @@ import { StyleDirective } from './customDirectives/style.directive';
     AppHoverDirective,
     ClassDirective,
     StyleDirective,
+    IfDirective,
   ],
   imports: [BrowserModule, AppRoutingModule],
   providers: [],
