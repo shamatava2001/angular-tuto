@@ -7,5 +7,9 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'net-ninja';
-  active: boolean = true;
+  active: boolean = false;
+
+  extendInfo(){
+    this.active = !this.active;
+  }
 }

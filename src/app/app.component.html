@@ -4,7 +4,7 @@
 </div> -->
 
 <!-- re-creating built-in ngclass, ngstyle directives -->
-<h2>built-in directives: ngclass</h2>
+<!-- <h2>built-in directives: ngclass</h2>
 <div [appClass]="{ wrapper: true, container: false }">
   <p>
     Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim quod culpa
@@ -18,4 +18,21 @@
     Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim quod culpa
     quis? Quia, modi quae.
   </p>
-</div>
+</div> -->
+
+<div><button (click)="extendInfo()">extend</button></div>
+<!-- <ng-template [ngIf]="active" [ngIfElse]="parelse"> -->
+  <div style="border: 1px solid blue;" *ngIf="active else parelse">
+    <h2>This is Extended information</h2>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
+       Neque asperiores ducimus alias, 
+      nostrum officiis, voluptates unde recusandae a vero, commodi aut amet hic?
+    </p>
+  </div>
+<!-- </ng-template> -->
+
+<ng-template #parelse>
+  <div>
+    <p>render this paragraph in else case</p>
+  </div>
+</ng-template>
