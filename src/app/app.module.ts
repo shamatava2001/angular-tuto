@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { setBackgroundDirective } from './customDirectives/setBackground.directive';
 import { HighlightDirective } from './customDirectives/highlight.directive';
 import { AppHoverDirective } from './customDirectives/appHover.directive';
+import { ClassDirective } from './customDirectives/class.directive';
 
 @NgModule({
   declarations: [
@@ -13,6 +14,7 @@ import { AppHoverDirective } from './customDirectives/appHover.directive';
     setBackgroundDirective,
     HighlightDirective,
     AppHoverDirective,
+    ClassDirective,
   ],
   imports: [BrowserModule, AppRoutingModule],
   providers: [],
