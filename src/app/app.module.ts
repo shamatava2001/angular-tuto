@@ -7,6 +7,7 @@ import { setBackgroundDirective } from './customDirectives/setBackground.directi
 import { HighlightDirective } from './customDirectives/highlight.directive';
 import { AppHoverDirective } from './customDirectives/appHover.directive';
 import { ClassDirective } from './customDirectives/class.directive';
+import { StyleDirective } from './customDirectives/style.directive';
 
 @NgModule({
   declarations: [
@@ -15,6 +16,7 @@ import { ClassDirective } from './customDirectives/class.directive';
     HighlightDirective,
     AppHoverDirective,
     ClassDirective,
+    StyleDirective,
   ],
   imports: [BrowserModule, AppRoutingModule],
   providers: [],
